@@ -1,7 +1,8 @@
 <template>
   <div class="outer">
     <div class="header-left">
-      <span><i class="el-icon-menu"></i> <span style="font-size: xx-large">桌台</span></span>
+      <span><i class="el-icon-menu"></i></span>
+      <span>桌台</span>
     </div>
     <div class="header-right">
       <span><i class="el-icon-printer"></i></span>
@@ -25,23 +26,25 @@ export default {
 
 <style scoped>
   .outer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     height: 100%;
-    width: 100%;
   }
   .header-left {
-    display: inline-block;
-    text-align: left;
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
   }
   .header-left > span {
-    height: 100%;
-    margin-right: 10px;
     font-size: xx-large;
+    margin-right: 1rem;
   }
   .header-right {
-    display: inline-block;
-    text-align: right;
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   .header-right > span {

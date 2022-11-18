@@ -21,27 +21,13 @@ export default {
 }
 </script>
 <style scoped>
-.el-header {
-  float: left;
-  width: 100%;
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-main {
-  height: 100%;
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-  padding: 0;
-}
-
 .el-container {
-  margin-bottom: 40px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
+.el-main {
+  flex: 1;
+  background-color: #d9d9d9;
+}
 </style>

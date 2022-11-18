@@ -1,37 +1,24 @@
 <template>
-<div class="main-container-container">
   <el-row>
-    <el-col :span="8" style="height: 100%;">
-      <div id="main-left">
+    <el-col :span="8">
+      <div class="main-left">
         <div class="time">{{time}}</div>
         <div class="date">{{date}}</div>
         <div class="user-info">{{userInfo}}</div>
         <div class="ticket-info">
-          <el-row :gutter="20">
-            <el-col :span="6">
-              <div  style="border-right: 1px solid #d9d9d9">
-                <el-statistic  title="未结账订单">
-                  <template slot="formatter">
-                    456/2
-                  </template>
-                </el-statistic>
-              </div>
-            </el-col>
-            <el-col :span="6">
-              <div>
-                <el-statistic  title="待支付金额">
-                  <template slot="formatter">
-                    456/2
-                  </template>
-                </el-statistic>
-              </div>
-            </el-col>
-          </el-row>
+          <div class="ticket-info-left">
+            <span class="ticket-info-title">未结账订单</span><br>
+            <span class="ticket-info-value">2</span>
+          </div>
+          <div class="ticket-info-right">
+            <span class="ticket-info-title">待支付金额( 元 )</span><br>
+            <span class="ticket-info-value">785</span>
+          </div>
         </div>
       </div>
     </el-col>
     <el-col :span="16">
-      <div id="main-right">
+      <div class="main-right">
         <el-row>
           <el-col :span="20">
             <div class="table-item"></div>
@@ -79,7 +66,6 @@
       </div>
     </el-col>
   </el-row>
-</div>
 </template>
 
 <script>
@@ -100,8 +86,13 @@ export default {
   mounted() {
     setInterval(()=>{
       let date = new Date();
-      this.time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+      let second = date.getSeconds();
+      second = second < 10 ? '0' + second : second;
+      let minute = date.getMinutes();
+      minute = minute < 10 ? '0' + minute : minute;
+      let hour = date.getHours();
 
+      this.time = hour + ":" + minute + ":" + second;
       this.date = date.getMonth() + "月" + date.getDate() + "日 星期" + this.dayDict[date.getDay()];
     }, 1000);
   }
@@ -109,33 +100,36 @@ export default {
 </script>
 
 <style scoped>
-  #main-left {
-    background-image: url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fphoto%2F2008-3-18%2F200803181719402627.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671178859&t=9021ebbc46dce4e0861cbd785c543519") ;
-    border: solid red 1px;
+  .el-row, .el-col, .main-right, .main-left {
     height: 100%;
   }
-
-  #main-right {
-    border: solid yellow 1px;
-    background-color: #d9d9d9;
-  }
-
-  .table-item {
-    display: inline-block;
-    height: 120px;
-    width: 120px;
-    border: solid red 1px;
-  }
-
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
-  }
-  .main-container-container {
-    height: 100%;
-  }
-  .el-row {
+  .main-left {
+    background-image: url("/public/img.png");
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ticket-info {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .ticket-info-left {
+    border-right: solid darkgray 1px;
+  }
+
+  .time {
+    font-size: 4rem;
+  }
+
+  .ticket-info-title {
+    color: #d9d9d9;
+    font-family: 黑体;
+    font-size: 1.5rem;
+  }
+  .ticket-info-value {
+    color: red;
+    font-size: 2rem;
   }
 </style>
