@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import HeaderComponent from "@/views/Layout/HeaderComponent";
-import MainContainer from "@/views/Layout/MainContainer";
+import HeaderComponent from "@/views/Desktop/HeaderComponent";
+import MainContainer from "@/views/Desktop/MainContainer";
 export default {
   name: "FrameWorkComponent",
   components: {
