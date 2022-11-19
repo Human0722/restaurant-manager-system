@@ -21,59 +21,23 @@
       <div class="main-right">
         <div class="main-right-seat">
           <div class="seat-item seat-item-used">
-            <span>1</span>
+            <span>101</span>
             <span>2/4</span>
           </div>
           <div class="seat-item">
-            <span>2</span>
+            <span>102</span>
             <span>0/0</span>
           </div>
           <div class="seat-item">
-            <span>3</span>
+            <span>103</span>
             <span>0/0</span>
           </div>
           <div class="seat-item">
-            <span>7</span>
+            <span>104</span>
             <span>0/0</span>
           </div>
           <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
-            <span>0/0</span>
-          </div>
-          <div class="seat-item">
-            <span>7</span>
+            <span>105</span>
             <span>0/0</span>
           </div>
           <div class="seat-item">
