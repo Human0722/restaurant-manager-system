@@ -9,9 +9,14 @@ const routes = [
         component: () => import('@/views/Desktop/FrameworkComponent')
     },
     {
-        path: '/component',
-        name: 'component',
+        path: '/counter',
+        name: 'counter',
         component: () => import('@/views/Counter/CounterComponent')
+    },
+    {
+        path: '/order',
+        name: 'order',
+        component: ()=> import('@/views/Order/FrameworkComponent')
     }
 ];
 
