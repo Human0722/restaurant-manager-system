@@ -7,6 +7,11 @@ const routes = [
         path: '/',
         name: 'home',
         component: () => import('@/views/Desktop/FrameworkComponent')
+    },
+    {
+        path: '/component',
+        name: 'component',
+        component: () => import('@/views/Counter/CounterComponent')
     }
 ];
 
