@@ -28,6 +28,9 @@ export default {
 <style scoped>
   .slf-container {
     height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
   }
   .slf-header {
     display: flex;
