@@ -11,6 +11,16 @@
           <span>x1</span>
           <span>￥5</span>
         </div>
+        <div class="slf-main-detail-content-item">
+          <span>王老吉</span>
+          <span>x1</span>
+          <span>￥5</span>
+        </div>
+        <div class="slf-main-detail-content-item">
+          <span>王老吉</span>
+          <span>x1</span>
+          <span>￥5</span>
+        </div>
       </div>
       <div class="slf-main-detail-submit">
         <div class="slf-main-detail-submit-total">
@@ -31,24 +41,39 @@
       <span>删除</span>
     </div>
     <div class="slf-main-content">
-      <div class="slf-main-content-item">
+      <div class="slf-main-content-item-container">
+        <div class="slf-main-content-item">
         <span>黑土地(红)</span>
         <span>￥50</span>
       </div>
-      <div class="slf-main-content-item">
+        <div class="slf-main-content-item">
+        <span>黑土地(红)</span>
+        <span>￥50</span>
+        <span class="badge">1</span>
+      </div>
+        <div class="slf-main-content-item">
         <span>黑土地(红)</span>
         <span>￥50</span>
       </div>
-      <div class="slf-main-content-item">
-        <span>黑土地(红)</span>
-        <span>￥50</span>
+        <div class="slf-main-content-item">
+          <span>黑土地(红)</span>
+          <span>￥50</span>
+        </div>
+        <div class="slf-main-content-item">
+          <span>黑土地(红)</span>
+          <span>￥50</span>
+        </div>
+        <div class="slf-main-content-item">
+          <span>黑土地(红)</span>
+          <span>￥50</span>
+        </div>
       </div>
-    </div>
-    <div class="slf-main-menu">
-      <span>全部</span>
+      <div class="slf-main-menu">
+      <span class="slf-main-menu-selected">全部</span>
       <span>牛肉火锅</span>
       <span>羊肉火锅</span>
       <span>酒水饮料</span>
+    </div>
     </div>
   </div>
 </template>
@@ -60,9 +85,6 @@ export default {
 </script>
 
 <style scoped>
-  div {
-    border: solid 1px red;
-  }
   .slf-main {
     flex-grow: 1;
 
@@ -70,21 +92,154 @@ export default {
     flex-direction: row;
   }
   .slf-main-detail {
-    flex: 0 0 36.36%;
+    flex: 0 0 26.36%;
+    border-top: 2px solid #d9d9d9;
+    border-right: 2px solid #d9d9d9;
 
     display: flex;
     flex-flow: column nowrap;
   }
   .slf-main-detail-header {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+
+    border-bottom: 2px solid #d9d9d9;
+    height: 90px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
+  .slf-main-detail-header>span:nth-child(1) {
+    margin-left: 1rem;
+  }
+  .slf-main-detail-header>span:nth-child(2) {
+    margin-right: 1rem;
+  }
+  .slf-main-detail-content {
+    flex-basis:  100%;
+    overflow: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+  }
+  .slf-main-detail-content-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: white solid 1px;
+
+    background-color: #d9d9d9;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  .slf-main-detail-content-item>span:nth-child(1) {
+    flex: 0 0 20%;
+  }
+  .slf-main-detail-content-item>span:nth-child(2) {
+    flex: 0 0 55%;
+  }
+  .slf-main-detail-content-item>span:nth-child(3) {
+    flex:  0 0 25%;
+  }
+
+  .slf-main-detail-submit {
+    border-top: solid 1px #d9d9d9;
+  }
+
+  .slf-main-detail-submit-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .slf-main-detail-submit-total>span:nth-child(1) {
+    color: gray;
+    margin-right: 1rem;
+  }
+  .slf-main-detail-submit-total>span:nth-child(2) {
+    color: orangered;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+  .slf-main-detail-submit-total>.el-button {
+    margin-bottom: 1rem;
+  }
+
+
   .slf-main-operate {
-    flex: 0 0 9.1%;
+    flex: 0 0 5%;
+    border-top: solid 2px #d9d9d9;
+    border-right: solid 2px #d9d9d9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .slf-main-content {
-    flex: 0 0 45.45%;
+    flex: 0 0 60%;
+    background-color: #d9d9d9;
+
+    display: flex;
+    flex-flow: row nowrap;
   }
+  .slf-main-content-item-container {
+    flex: 0 0 100%;
+
+    box-sizing: border-box;
+    border-top: solid #d9d9d9 2px;
+
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-content: flex-start;
+  }
+
+  .slf-main-content-item {
+    background-color: white;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 20%;
+    border-left: 5px solid #d9d9d9;
+    border-right: 5px solid #d9d9d9;
+    border-bottom: 10px solid #d9d9d9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+  .slf-main-content-item>span:nth-child(1) {
+    font-size: 2rem;
+  }
+  .slf-main-content-item>span:nth-child(2) {
+    font-size: 1rem;
+  }
+
   .slf-main-menu {
-    flex: 0 0 9.1%;
+    flex: 0 0 16%;
+    border-top: solid #d9d9d9 2px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  .slf-main-menu>span {
+    height: 4rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .slf-main-menu-selected {
+    background-color: #d9d9d9;
+  }
+  .badge {
+    background-color: red;
+    position: absolute;
+    right: 0px;
   }
 </style>
