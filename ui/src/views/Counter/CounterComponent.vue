@@ -5,21 +5,21 @@
       <span><i class="el-icon-close"></i></span>
     </div>
     <div class="slf-counter-monitor">
-      <span>6</span>
+      <span>{{monitorText}}</span>
     </div>
     <div class="slf-counter-keyboard">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-      <div>8</div>
-      <div>9</div>
+      <div v-on:click="press(1)">1</div>
+      <div v-on:click="press(2)">2</div>
+      <div v-on:click="press(3)">3</div>
+      <div v-on:click="press(4)">4</div>
+      <div v-on:click="press(5)">5</div>
+      <div v-on:click="press(6)">6</div>
+      <div v-on:click="press(7)">7</div>
+      <div v-on:click="press(8)">8</div>
+      <div v-on:click="press(9)">9</div>
       <div></div>
-      <div>0</div>
-      <div><i class="el-icon-close"></i></div>
+      <div v-on:click="press(0)">0</div>
+      <div v-on:click="press('x')"><i class="el-icon-close"></i></div>
     </div>
     <div class="slf-counter-submit">
       <span>开台并点菜</span>
@@ -32,11 +32,26 @@ export default {
   name: "HomePage",
   data() {
     return {
-      text: "",
+      monitorText: "6",
     };
   },
   methods: {
+    press(i) {
+      let that = this;
+      if (i === 'x') {
+        that.monitorText = ''
+        return
+      }
+      if (that.monitorText.length > 2) {
+        that.monitorText = ''
+        return
+      }
+      if (that.monitorText.startsWith('0')) {
+        that.monitorText = that.monitorText.substring(1)
+      }
+      that.monitorText = that.monitorText + i;
 
+    }
   }
 }
 </script>
