@@ -43,13 +43,15 @@
     <div class="slf-main-content">
       <div class="slf-main-content-item-container">
         <div class="slf-main-content-item">
-        <span>黑土地(红)</span>
-        <span>￥50</span>
-      </div>
+          <span>
+          <el-badge class="mark" :value="12">黑土地(红)
+          </el-badge>
+          </span>
+          <span>￥50</span>
+        </div>
         <div class="slf-main-content-item">
         <span>黑土地(红)</span>
         <span>￥50</span>
-        <span class="badge">1</span>
       </div>
         <div class="slf-main-content-item">
         <span>黑土地(红)</span>
@@ -65,15 +67,28 @@
         </div>
         <div class="slf-main-content-item">
           <span>黑土地(红)</span>
-          <span>￥50</span>
+          <span>￥50 ~ ￥80</span>
+        </div>
+        <div class="slf-main-content-item">
+          <span><i class="el-icon-plus"></i></span>
+          <span>添加菜品</span>
         </div>
       </div>
       <div class="slf-main-menu">
-      <span class="slf-main-menu-selected">全部</span>
-      <span>牛肉火锅</span>
-      <span>羊肉火锅</span>
-      <span>酒水饮料</span>
-    </div>
+        <span class="slf-main-menu-selected">
+        <el-badge class="mark" :value="12">
+          <span>全部</span>
+        </el-badge>
+        </span>
+        <span>
+        <el-badge class="mark" :value="12">
+          <span>全部</span>
+        </el-badge>
+        </span>
+        <span>牛肉火锅</span>
+        <span>羊肉火锅</span>
+        <span>酒水饮料</span>
+      </div>
     </div>
   </div>
 </template>
@@ -206,6 +221,7 @@ export default {
     border-left: 5px solid #d9d9d9;
     border-right: 5px solid #d9d9d9;
     border-bottom: 10px solid #d9d9d9;
+    padding-top: 1rem;
 
     display: flex;
     flex-direction: column;
@@ -230,9 +246,11 @@ export default {
     overflow: auto;
   }
   .slf-main-menu>span {
-    height: 4rem;
+    height: 3rem;
+    line-height: 3rem;
     font-size: 1.2rem;
     font-weight: 400;
+    margin-top: 1rem;
   }
   .slf-main-menu-selected {
     background-color: #d9d9d9;
