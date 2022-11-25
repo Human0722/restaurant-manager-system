@@ -1,11 +1,17 @@
 package io.github.human0722.restaurantmanagersystem.web;
 
+import io.github.human0722.restaurantmanagersystem.request.MainAreaRequest;
+import io.github.human0722.restaurantmanagersystem.response.MainAreaResponse;
+import io.github.human0722.restaurantmanagersystem.response.base.Response;
 import io.github.human0722.restaurantmanagersystem.service.MainAreaService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author human0722
@@ -21,9 +27,16 @@ public class MainAreaController {
 
     final private MainAreaService mainAreaService;
 
+    @ApiOperation(value = "区域列表")
     @GetMapping
-    public String getMainAreaList() {
-        return "ok";
+    public Response<List<MainAreaResponse.DTO>> getMainAreaList() {
+        return Response.success(mainAreaService.getMainAreaList());
     }
 
+    @ApiOperation(value = "新增一个区域")
+    @PostMapping
+    public Response<MainAreaResponse.DTO> addMainArea(
+            @Validated @RequestBody MainAreaRequest mainAreaRequest) {
+        return Response.success(mainAreaService.addMainArea(mainAreaRequest));
+    }
 }

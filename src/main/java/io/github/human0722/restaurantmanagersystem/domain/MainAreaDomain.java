@@ -1,5 +1,6 @@
 package io.github.human0722.restaurantmanagersystem.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.github.human0722.restaurantmanagersystem.domain.base.BaseMysqlDomain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,8 @@ import lombok.NoArgsConstructor;
  **/
 @Data
 @NoArgsConstructor
+@TableName("rms_main_area")
 public class MainAreaDomain extends BaseMysqlDomain {
-    private String seatName;
+    private String areaName;
     private Integer sort;
 }
