@@ -14,9 +14,9 @@ import java.util.List;
  */
 @Mapper(componentModel = "spring")
 public interface MainAreaMapStruct {
-  List<MainAreaResponse.DTO> domainListToDTOList(List<MainAreaDomain> mainAreaDomainList);
+  MainAreaResponse domainToDTO(MainAreaDomain mainAreaDomain);
 
-  MainAreaResponse.DTO domainToDTO(MainAreaDomain mainAreaDomain);
+  MainAreaDomain createToDomain(MainAreaRequest.Create create);
 
-  MainAreaDomain requestToDomain(MainAreaRequest request);
+  MainAreaDomain updateToDomain(MainAreaRequest.Update update);
 }
